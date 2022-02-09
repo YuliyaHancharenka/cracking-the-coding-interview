@@ -1,21 +1,19 @@
-package tasks;
+package tasks.java;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class JavaLambdaExpressions {
+public class LambdaExpressions {
     //13.7 p.168
     public static void main(String[] args) {
-        Country usa = new Country(332000000, "North America");
-        Country uk = new Country(68000000, "Europe");
-        Country poland = new Country(38000000, "Europe");
-        Country canada = new Country(38000000, "North America");
-        List<Country> countries = new ArrayList<>();
-        countries.add(usa);
-        countries.add(uk);
-        countries.add(poland);
-        countries.add(canada);
+        List<Country> countries = Arrays.asList(
+                new Country(332000000, "North America"),
+                new Country(68000000, "Europe"),
+                new Country(38000000, "Europe"),
+                new Country(38000000, "North America")
+                );
 
         System.out.println(getPopulation(countries, "Europe"));
 
