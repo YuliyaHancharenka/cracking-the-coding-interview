@@ -25,30 +25,32 @@ public class JavaLambdaExpressions {
         Stream<Integer> populations = countries.stream().map(c -> c.getContinent().equals(continent) ? c.getPopulation() : 0);
         return populations.reduce(0, Integer::sum);
     }
+
+    private static class Country {
+        int population;
+        String continent;
+
+        public Country(int population, String continent) {
+            this.population = population;
+            this.continent = continent;
+        }
+
+        public int getPopulation() {
+            return population;
+        }
+
+        public void setPopulation(int population) {
+            this.population = population;
+        }
+
+        public String getContinent() {
+            return continent;
+        }
+
+        public void setContinent(String continent) {
+            this.continent = continent;
+        }
+    }
+
 }
 
-class Country {
-    int population;
-    String continent;
-
-    public Country(int population, String continent) {
-        this.population = population;
-        this.continent = continent;
-    }
-
-    public int getPopulation() {
-        return population;
-    }
-
-    public void setPopulation(int population) {
-        this.population = population;
-    }
-
-    public String getContinent() {
-        return continent;
-    }
-
-    public void setContinent(String continent) {
-        this.continent = continent;
-    }
-}
